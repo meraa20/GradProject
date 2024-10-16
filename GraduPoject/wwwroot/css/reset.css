@@ -1,0 +1,52 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #68b620;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.reset-link-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -100px;
+}
+
+.reset-link-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    color: #68b620;
+    margin-bottom: 20px;
+}
+
+.message {
+    margin-bottom: 20px;
+}
+
+.back-to-login {
+    margin-top: 20px;
+}
+
+    .back-to-login a {
+        color: #68b620;
+        text-decoration: none;
+    }
+
+        .back-to-login a:hover {
+            text-decoration: underline;
+        }

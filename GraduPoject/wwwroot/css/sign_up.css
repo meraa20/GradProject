@@ -1,0 +1,130 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color:  #859768;
+    color: #333;
+    line-height: 1.6;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    max-width: 900px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 30px;
+    
+    box-sizing: border-box;
+    margin: 20px;
+    margin-bottom:30px;
+    position: relative;
+    overflow: hidden;
+    height: 700px;
+}
+
+.form-container {
+    width: 80%;
+    max-width: 500px;
+    margin-right: 20px;
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-container form input,
+.form-container form button {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+    .form-container form input[type="text"],
+    .form-container form input[type="email"],
+    .form-container form input[type="password"]
+    .form-container form input[type="tel"] {
+        width: 100%;
+    }
+
+.form-container form button {
+    background-color: #68b620;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 40px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.form-container form button:hover {
+    background-color: #4a9a1f;
+}
+
+.form-container .already-have-account {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+.form-container .already-have-account a {
+    color: #68b620;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-container .already-have-account a:hover {
+    text-decoration: underline;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .form-container,
+    .image-container {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

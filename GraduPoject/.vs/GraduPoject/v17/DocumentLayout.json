@@ -1,0 +1,190 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|f:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\gradupoject\\views\\account\\sign_up.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|solutionrelative:views\\account\\sign_up.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|f:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\gradupoject\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|f:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\gradupoject\\models\\dbcontexxt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|solutionrelative:models\\dbcontexxt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|f:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\gradupoject\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|f:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\gradupoject\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|f:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\gradupoject\\views\\shared\\_sign_up.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|solutionrelative:views\\shared\\_sign_up.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|f:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\gradupoject\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|f:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\gradupoject\\views\\shared\\_login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|solutionrelative:views\\shared\\_login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|f:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\gradupoject\\views\\shared\\_many.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|solutionrelative:views\\shared\\_many.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|f:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\gradupoject\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2C5325CB-1386-4DFA-AB9C-9A872AF6667B}|GraduPoject.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DbContexxt.cs",
+              "DocumentMoniker": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Models\\DbContexxt.cs",
+              "RelativeDocumentMoniker": "Models\\DbContexxt.cs",
+              "ToolTip": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Models\\DbContexxt.cs",
+              "RelativeToolTip": "Models\\DbContexxt.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAAAAQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T18:13:18.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA0AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T17:44:56.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_sign_up.cshtml",
+              "DocumentMoniker": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Views\\Shared\\_sign_up.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_sign_up.cshtml",
+              "ToolTip": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Views\\Shared\\_sign_up.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_sign_up.cshtml",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAABAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-16T13:31:10.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Sign_up.cshtml",
+              "DocumentMoniker": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Views\\Account\\Sign_up.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Sign_up.cshtml",
+              "ToolTip": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Views\\Account\\Sign_up.cshtml",
+              "RelativeToolTip": "Views\\Account\\Sign_up.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-16T13:30:06.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAA8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T13:29:31.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-16T13:23:49.054Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T12:28:38.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-16T13:28:48.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_login.cshtml",
+              "DocumentMoniker": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Views\\Shared\\_login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_login.cshtml",
+              "ToolTip": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Views\\Shared\\_login.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_login.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-16T13:30:53.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_many.cshtml",
+              "DocumentMoniker": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Views\\Shared\\_many.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_many.cshtml",
+              "ToolTip": "F:\\\u0627\u0644\u0645\u0646\u062D\u0629\\projects\\GraduPoject\\Views\\Shared\\_many.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_many.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAACQAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-16T13:31:28.725Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

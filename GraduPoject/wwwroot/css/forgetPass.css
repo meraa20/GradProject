@@ -1,0 +1,85 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #68b620;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.forgot-password-section {
+    margin-top: -100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.forgot-password-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+h2 {
+    color: #68b620;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s;
+}
+
+    input[type="email"]:focus {
+        border: 1px solid #68b620;
+        outline: none;
+    }
+
+.submit-btn {
+    background-color: #5b6b4c;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+    .submit-btn:hover {
+        background-color: #5b9a1b;
+    }
+
+.back-to-login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+    .back-to-login a {
+        color: #68b620;
+        text-decoration: none;
+    }
+
+        .back-to-login a:hover {
+            text-decoration: underline;
+        }

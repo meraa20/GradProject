@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Reset";
+    Layout = "_pass";
+}
+<link rel="stylesheet" href="~/css/reset.css">
+
+<header>
+    <h1>Password Reset</h1>
+</header>
+<div id="content">
+<section class="reset-link-section">
+    <div class="reset-link-container">
+        <h2>Reset Link Sent!</h2>
+        <p class="message">A password reset link has been sent to your email address. Please check your inbox.</p>
+        <p>If you don't see the email, check your spam folder or try again.</p>
+        <div class="back-to-login">
+                <p><a asp-controller="Account" asp-action="login">Back to Login</a></p>
+        </div>
+    </div>
+</section>
+</div>

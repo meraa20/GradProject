@@ -1,0 +1,162 @@
+/* Basic reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #68b620;
+    padding: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    header .logo {
+        width: 150px; /* Adjust logo size as needed */
+    }
+
+nav {
+    background-color: #68b620;
+    padding: 10px 20px;
+}
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+    }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+            nav ul li a {
+                color: white;
+                text-decoration: none;
+                font-size: 18px;
+            }
+
+                nav ul li a:hover {
+                    color: #ffdd57;
+                }
+
+.shop-section {
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product-box {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    width: 250px; /* Smaller box size */
+    text-align: center;
+}
+
+    .product-box img {
+        width: 100%;
+        height: 200px;
+        object-fit: contain;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+.product-info {
+    padding: 10px;
+}
+
+    .product-info h3 {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+
+    .product-info .artist-name {
+        font-style: italic;
+        color: #666;
+    }
+
+    .product-info .price {
+        font-size: 20px;
+        color: #68b620;
+        margin: 10px 0;
+    }
+
+    .product-info .description {
+        font-size: 14px;
+        color: #666;
+        margin: 10px 0;
+    }
+
+    .product-info .rating {
+        font-size: 14px;
+        color: #f39c12;
+        margin: 10px 0;
+    }
+
+.add-to-cart {
+    padding: 10px 20px;
+    background-color: #5b6b4c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    .add-to-cart:hover {
+        background-color: #5b9a1b;
+    }
+
+footer {
+    margin-top: 300px;
+    background-color: #535452;
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.notification-icon {
+    width: 40px; /* Set desired width */
+    height: 40px;
+    margin-top: -10px; /* Set desired height */
+}
+
+.order-btn-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.order-btn {
+    background-color: #637653;
+    color: white;
+    padding: 15px 40px;
+    font-weight: bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .order-btn:hover {
+        background-color: #5b9a1b;
+        transform: scale(1.05);
+    }

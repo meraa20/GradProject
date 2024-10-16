@@ -1,0 +1,39 @@
+﻿@{
+    ViewData["Title"] = "Follow Artist";
+    Layout = "_many";
+}
+<link rel="stylesheet" href="~/css/Artist.css">
+<section class="artist-section">
+    <div class="artist-profile">
+        <a asp-controller="Artists" asp-action="Artist"><img src="~/images/438240362_453793743988413_2561990229713755555_n.jpg" alt="Artist Profile" class="profile-img"></a>
+        <div class="artist-details">
+            <h2>
+                Artist Name
+                <a href="#" class="profile-link" title="Visit Profile"><i class="fas fa-user"></i></a>
+            </h2>
+            <p>Genre: Contemporary Art</p>
+            <p>Followers: 1,234</p>
+            <p>Description: This artist is known for their unique approach to modern art, blending various styles and techniques in thought-provoking ways.</p>
+            <button class="follow-btn">Follow</button>
+        </div>
+    </div>
+
+    <section class="artist-works">
+        <h3>Recent Works</h3>
+        <div class="works-container">
+            <div class="work-item">
+                <img src="~/images/2.jfif" alt="Artwork 1">
+                <p>Artwork Title 1</p>
+            </div>
+            <div class="work-item">
+                <img src="~/images/Contact_us1.jpg" alt="Artwork 2">
+                <p>Artwork Title 2</p>
+            </div>
+            <div class="work-item">
+                <img src="~/images/4.jfif" alt="Artwork 3">
+                <p>Artwork Title 3</p>
+            </div>
+            <!-- Add more works as needed -->
+        </div>
+    </section>
+</section>
