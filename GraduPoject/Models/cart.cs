@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq; 
 
 namespace GraduPoject.Models
@@ -6,9 +7,10 @@ namespace GraduPoject.Models
     public class Cart
     {
         public int CartID { get; set; } // معرف العربة
+        [ForeignKey("User")]
         public int UserID { get; set; } // معرف المستخدم المرتبط بالعربة
         public virtual User User { get; set; } // العلاقة مع المستخدم
-        public virtual ICollection<CartItem> Items { get; set; } // العناصر الموجودة في العربة
+        public virtual ICollection<CartItem>? Items { get; set; } // العناصر الموجودة في العربة
 
         public Cart()
         {

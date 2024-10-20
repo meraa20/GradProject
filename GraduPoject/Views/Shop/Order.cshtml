@@ -1,7 +1,7 @@
-﻿@model GraduPoject.Models.Cart 
+﻿@model GraduPoject.ViewModel.OrderVM
 
 @{
-    ViewBag.Title = "Order Page"; 
+    ViewBag.Title = "Order Page";
     Layout = "_many";
 }
 @section styles {
@@ -14,40 +14,45 @@
     <div class="order-container">
         <div class="order-details">
             <h3>Your Cart</h3>
-            @foreach (var item in Model.Items) 
+            @foreach (var item in Model.CartItems)
             {
                 <div class="cart-item">
-                    <img src="@item.Product.Image" alt="Product Image">
+                    <img src="~/Images/@item.Img" alt="Product Image">
                     <div>
-                        <h4>@item.Product.Name</h4>
-                        <p>Artist: @item.Product.BusinessOwner.Name</p>
-                        <p>Price: $@item.Product.Price</p>
+                        <h4>@item.Name</h4>
+                        <p>Artist: @item.Name</p>
+                        <p>Price: $@item.Price</p>
+                        <p>Quantity: @item.Quantity</p>
                     </div>
-                    <button class="delete-btn">Delete</button>
+                    <form asp-controller="Shop" asp-action="Delete" method="post">
+                        <input type="hidden" name="itemID" value="@item.itemId" />
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
                 </div>
             }
             <div class="order-summary">
-                <p><strong>Subtotal:</strong> </p>
+                <p><strong>Subtotal:</strong>@ViewBag.SubTotal </p>
                 <p><strong>Shipping:</strong> $10</p>
-                <p><strong>Total:</strong>  10</p> >
+                <p><strong>Total:</strong>  @(ViewBag.SubTotal + 10)</p> >
             </div>
         </div>
 
         <div class="shipping-details">
             <h3>Shipping Information</h3>
-            <form action="#" method="POST">
-                <input type="text" name="full-name" placeholder="Full Name" required>
-                <input type="text" name="address" placeholder="Shipping Address" required>
-                <input type="text" name="city" placeholder="City" required>
-                <input type="datetime-local" name="time" placeholder="Time" required>
-                <input type="tel" name="phone" placeholder="Phone Number" required>
+            <form action="AddOrder" method="post">
+                <input type="text" asp-for="@Model.order.Name" placeholder="Full Name" required>
+                <input type="text" asp-for="@Model.order.Address" placeholder="Shipping Address" required>
+                <input type="text" asp-for="@Model.order.City" placeholder="City" required>
+                <input type="datetime-local" asp-for="@Model.order.Time" placeholder="Time" required>
+                <input type="tel" asp-for="@Model.order.Phone" placeholder="Phone Number" required>
                 <h3>Payment Method</h3>
                 <label>
-                    <input type="radio" name="payment-method" value="credit-card" required> Credit Card
+                    <input type="radio" name="order.PaymentMethod" value="credit-card" @(Model.order.PaymentMethod == "credit-card" ? "checked" : "") required> Credit Card
                 </label>
                 <label>
-                    <input type="radio" name="payment-method" value="paypal" required> PayPal
+                    <input type="radio" name="order.PaymentMethod" value="paypal" value="paypal" @(Model.order.PaymentMethod == "paypal" ? "checked" : "") required> PayPal
                 </label>
+
                 <button type="submit" class="submit-order-btn">Place Order</button>
             </form>
         </div>

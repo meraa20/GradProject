@@ -7,8 +7,8 @@ namespace GraduPoject.Models
     {
         [Key]
         public int ID { get; set; }
-        [ForeignKey("Product")]
-        public int ProductID { get; set; }
+        
+        
         public int RateNumber { get; set; }
 
         public virtual Product Product { get; set; }

@@ -1,10 +1,12 @@
-﻿@{
+﻿@using GraduPoject.ViewModel
+@model List<ShopVM>
+@{
     ViewData["Title"] = "Shop";
     Layout = "_many";
 }
 @section styles {
     <link rel="stylesheet" href="~/css/shop.css">
-    
+
 }
 
 <section class="shop-section">
@@ -14,54 +16,31 @@
         </form>
 
         <div class="container">
-            <div class="product-box">
-                <img src="../images/Home2.jpg" alt="Product 1">
-                <div class="product-info">
-                    <h3>Product Name 1</h3>
-                    <p class="artist-name">Artist Name 1</p>
-                    <p class="price">$100</p>
-                    <p class="description">This is a brief description of the product.</p>
-                    <p class="rating">Rating: ★★★★☆</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-box">
-                <img src="../images/4.jfif" alt="Product 2">
-                <div class="product-info">
-                    <h3>Product Name 2</h3>
-                    <p class="artist-name">Artist Name 2</p>
-                    <p class="price">$200</p>
-                    <p class="description">This is a brief description of the product.</p>
-                    <p class="rating">Rating: ★★★☆☆</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-box">
-                <img src="../images/2.jfif" alt="Product 3">
-                <div class="product-info">
-                    <h3>Product Name 3</h3>
-                    <p class="artist-name">Artist Name 3</p>
-                    <p class="price">$250</p>
-                    <p class="description">This is a brief description of the product.</p>
-                    <p class="rating">Rating: ★★★★★</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-            <div class="product-box">
-                <img src="../images/5.jfif" alt="Product 4">
-                <div class="product-info">
-                    <h3>Product Name 4</h3>
-                    <p class="artist-name">Artist Name 4</p>
-                    <p class="price">$300</p>
-                    <p class="description">This is a brief description of the product.</p>
-                    <p class="rating">Rating: ★★★★★</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-
+            @if (Model != null && Model.Any())
+            {
+                @foreach (var shop in Model)
+                {
+                    <div class="product-box">
+                        <img src="../images/@shop.Img" alt="@shop.ProductName">
+                        <div class="product-info">
+                            <h3>@shop.ProductName</h3>
+                            <p class="artist-name">@shop.ArtistName</p>
+                            <p class="price">$@shop.Price</p>
+                            <p class="description">@shop.Description</p>
+                            <p class="rating">Rating: @Html.Raw(new string('★', shop.Rate))@Html.Raw(new string('☆', 5 - shop.Rate))</p>
+                            <form asp-controller="Shop" asp-action="AddToCart" method="post">
+                                <input type="hidden" name="productID" value="@shop.id" />
+                                <button class="add-to-cart" type="submit" class="add-to-cart">Add to Cart</button>
+                            </form>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No products available.</p>
+            }
         </div>
 
-        </div>
+    </div>
 </section>
-

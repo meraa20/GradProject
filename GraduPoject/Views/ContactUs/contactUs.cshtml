@@ -12,10 +12,14 @@
 </section>
 
 <section class="contact-content">
+    @if (TempData["Message"] != null)
+    {
+        <p>@TempData["Message"]</p>
+    }
     <h2>Get in Touch</h2>
     <p>We’d love to hear from you! Whether you have a question, feedback, or need help with anything, feel free to reach out to us using the form below.</p>
 
-    <form asp-controller="Contact" asp-action="SendMessage" method="POST">
+    <form asp-controller="ContactUs" asp-action="SendMessage" method="POST">
         <div>
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" required>
@@ -30,6 +34,8 @@
         </div>
         <button type="submit">Send Message</button>
     </form>
+
+
 </section>
 
 <section class="social-media">

@@ -1,53 +1,60 @@
-﻿
-
+﻿@model GraduPoject.ViewModel.Sign_upVm
 @{
     ViewData["Title"] = "Sign Up";
     Layout = "_sign_up";
 }
 
-
-    <div class="form-container">
-        <h2>Create Your Account</h2>
-    <form asp-controller="Home" asp-action="Index" method="post">
-            <div class="form-group">
-                <label for="first-name">Full Name</label>
-                <input type="text" id="first-name" name="FirstName" @* asp-for="FirstName" *@ placeholder="First Name" />
-               @*  <span asp-validation-for="FirstName" class="text-danger"></span> *@
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="Email" @* asp-for="Email" *@ placeholder="Email" />
-                @* <span asp-validation-for="Email" class="text-danger"></span> *@
-            </div>
-
-            <div class="form-group">
-                <label for="tel">Phone Number</label>
-                <input type="tel" id="tel" name="PhoneNumber" @* asp-for="PhoneNumber" *@ placeholder="Phone Number" />
-               @*  <span asp-validation-for="PhoneNumber" class="text-danger"></span> *@
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="Password" @* asp-for="Password" *@ placeholder="Password" />
-                @* <span asp-validation-for="Password" class="text-danger"></span> *@
-            </div>
-
-            <div class="form-group">
-                <label for="confirm-password">Confirm Password</label>
-                <input type="password" id="confirm-password" name="ConfirmPassword" @* asp-for="ConfirmPassword" *@ placeholder="Confirm Password" />
-                @* <span asp-validation-for="ConfirmPassword" class="text-danger"></span> *@
-            </div>
-
-            <button id="signup-btn" type="submit">Sign Up</button>
-        </form>
-
-        <div class="already-have-account">
-            <p>Already have an account? <a asp-action="login" asp-controller="Account">Log In</a></p>
+<div class="form-container">
+    <h2>Create Your Account</h2>
+    <form asp-action="Sign_up" >
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name" class="control-label">Full Name</label>
+            <input  asp-for="Name" class="form-control" placeholder="Full Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
+
+        <div class="form-group">
+            <label asp-for="Email" class="control-label">Email</label>
+            <input  class="form-control" asp-for="Email" placeholder="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Phone" class="control-label"> Phone Number</label>
+           
+            <input asp-for="Phone" class="form-control"  placeholder="Phone Number" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password" class="control-label">Password</label>
+            <input class="form-control" asp-for="Password" placeholder="Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Confirmpassword" class="control-label">Confirm Password</label>
+            <input class="form-control" asp-for="Confirmpassword" placeholder="Confirm Password" />
+            <span asp-validation-for="Confirmpassword" class="text-danger"></span>
+        </div>
+        
+
+        <button id="signup-btn" type="submit" value="Create">Sign Up</button>
+    </form>
+
+    <div class="already-have-account">
+        <p>Already have an account? <a asp-action="Login" asp-controller="Account">Log In</a></p>
     </div>
+</div>
 
 @section scripts {
-    
-    @await Html.PartialAsync("_ValidationScriptsPartial")
+        <!-- تأكد من تحميل jQuery أولاً -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+        <!-- ثم تحميل jquery validation -->
+        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+
+        <!-- وأخيراً تحميل jquery validation unobtrusive -->
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 }

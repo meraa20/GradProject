@@ -1,6 +1,7 @@
-﻿@{
+﻿@model GraduPoject.ViewModel.LoginVm
+@{
     ViewData["Title"] = "Login";
-    Layout = "_login";
+    Layout = "_login";  
 }
 
 <section class="login-section">
@@ -8,20 +9,21 @@
         <div class="form-container">
             <h2>Login to Your Account</h2>
 
-            <form asp-controller="Home" asp-action="Index" method="POST">
+            <form asp-action="Login" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" class="form-control" required />
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
-
                 <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" class="form-control" required />
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
-
                 <button type="submit" class="submit-btn" id="login-btn">Login</button>
                 <p class="forgot-password"><a asp-controller="Account" asp-action="ForgetPass">Forgot Password?</a></p>
-                <p class="signup-link">Don't have an account? <a asp-action="sign_up" asp-controller="Account">Sign Up</a></p>
+                <p class="signup-link">Don't have an account? <a asp-action="Sign_up" asp-controller="Account">Sign Up</a></p>
             </form>
         </div>
         <div class="image-container">
@@ -30,5 +32,8 @@
     </div>
 </section>
 
-
-<partial name="_ValidationScriptsPartial" />
+@section scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

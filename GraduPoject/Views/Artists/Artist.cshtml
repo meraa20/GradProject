@@ -1,55 +1,61 @@
-﻿@{
+﻿@model BusinessOwner
+@{
     ViewData["Title"] = "Artist";
     Layout = "_many";
 }
 <link rel="stylesheet" href="~/css/art.css">
-
 <link rel="stylesheet" href="~/css/About.css">
 
 <div id="content">
-<section class="artist-profile">
-    <div class="profile-header">
-   <a asp-controller="Artists" asp-action="Artist"><img src="~/images/438240362_453793743988413_2561990229713755555_n.jpg" alt="Artist Profile" class="profile-img"></a>
-           
-        <div class="artist-info">
-            <h2>Artist Name</h2>
-            <p class="genre">Genre: Contemporary Art</p>
-            <p class="followers">Followers: <span>1,234</span></p>
-            <button class="follow-btn">Follow</button>
+    <section class="artist-profile">
+        <div class="profile-header">
+            <a asp-controller="Artists" asp-action="Artist" asp-route-id="@Model.ID">
+                <img src="~/images/438240362_453793743988413_2561990229713755555_n.jpg" alt="Artist Profile" class="profile-img">
+            </a>
+
+            <div class="artist-info">
+                <h2>@Model.Name</h2>
+                <p class="genre">Genre: @Model.NationalID</p>
+                <p class="followers">Followers: <span>1234</span></p>
+                <button class="follow-btn">Follow</button>
+            </div>
         </div>
-    </div>
 
-    <div class="bio">
-        <h3>About the Artist</h3>
-        <p>This artist is known for their unique approach to modern art, blending various styles and techniques in thought-provoking ways. Their works have been featured in several galleries and exhibitions.</p>
-    </div>
-
-    <div class="rating">
-        <h3>Product Rating</h3>
-        <p>Rating: <span>★★★★☆</span></p>
-    </div>
+        <div class="bio">
+            <h3>About the Artist</h3>
+            <p>@Model.Bio</p>
+        </div>
+    
 
     <section class="artist-works">
         <h3>Works</h3>
         <div class="works-container">
-            <div class="work-item">
-                <img src="~/images/7.jfif" alt="Artwork 1">
-                <p>Artwork Title 1</p>
-            </div>
-            <div class="work-item">
-                <img src="~/images/8.jfif" alt="Artwork 2">
-                <p>Artwork Title 2</p>
-            </div>
-            <div class="work-item">
-                <img src="~/images/9.jfif" alt="Artwork 3">
-                <p>Artwork Title 3</p>
-            </div>
-            <div class="work-item">
-                <img src="~/images/3.jfif" alt="Artwork 4">
-                <p>Artwork Title 4</p>
-            </div>
-            <!-- Add more works as needed -->
+            @foreach (var product in Model.Products)
+            {
+                <div class="work-item">
+                    <img src="~/images/@product.Image" alt="@product.NameAntiqae">
+                    <p>@product.NameAntiqae</p>
+                    <div class="rating">
+                        <h6>Product Rating</h6>
+                        @if (product.Rate?.RateNumber != null)
+                        {
+                            <p>
+
+                                <h6>Rating:</h6>
+                                @for (int i = 1; i <= product.Rate.RateNumber; i++)
+                                {
+                                    <span style="font-size: 12px;">&#9733;</span>
+                                }
+                            </p>
+                        }
+                        else
+                        {
+                            <p>No Rating</p>
+                        }
+                    </div>
+                </div>
+            }
         </div>
+        </section>
     </section>
-</section>
 </div>

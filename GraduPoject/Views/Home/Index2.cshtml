@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home"; 
+    Layout = "_Layout2";
+}
+
+<div class="hero-section">
+    <div>
+        <h2>Discover Unique Art & Decor</h2>
+        <p>Beautiful pieces, tailored solutions, and inspiring designs</p>
+        <a class="btn btn-primary" asp-controller="Shop" asp-action="Index">Shop Now</a>
+    </div>
+</div>
+
+<section class="features">
+    <div class="feature-box">
+        <img src="https://4.bp.blogspot.com/-DdjhTIYE9rA/WjU11xPhAOI/AAAAAAAACFQ/iKWLXgRJMCYuk9pz2RKSA8KiyY-tTWDCQCLcBGAs/s1600/3.jpg" alt="Feature 1">
+        <h3>Handpicked Artworks</h3>
+        <p>Explore a curated selection of beautiful paintings and sculptures.</p>
+    </div>
+    <div class="feature-box">
+        <img src="~/images/15.jfif" alt="Feature 2">
+        <h3>Great designs for you</h3>
+        <p>Get tailored design advice to find the perfect pieces for your space.</p>
+    </div>
+    <div class="feature-box">
+        <img src="https://tse1.mm.bing.net/th?id=OIP.Ec8yofrB9VPP8yH1rhbAkQHaE8&pid=Api&P=0&h=220" alt="Feature 3">
+        <h3>Support Local Artists</h3>
+        <p>Discover and support emerging talent by purchasing their creations.</p>
+    </div>
+</section>
+
+<section class="cta-section">
+    <h2>Ready to Transform Your Space?</h2>
+    <a class="btn btn-primary" asp-controller="Home" asp-action="Index2">Get Started</a>
+</section>

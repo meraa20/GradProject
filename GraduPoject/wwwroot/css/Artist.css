@@ -1,4 +1,4 @@
-/* Reset and basic styling */
+﻿/* Reset and basic styling */
 * {
     margin: 0;
     padding: 0;
@@ -22,9 +22,9 @@ header {
     align-items: center;
 }
 
-header .logo {
-    width: 150px;
-}
+    header .logo {
+        width: 150px;
+    }
 
 nav ul {
     list-style: none;
@@ -32,22 +32,21 @@ nav ul {
     gap: 15px;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
 
-nav ul li a:hover {
-    color: #ffdd57;
-}
+        nav ul li a:hover {
+            color: #ffdd57;
+        }
 
 .notification-icon {
     width: 40px; /* Set desired width */
-    height: 40px; 
-    margin-top: -10px;/* Set desired height */
+    height: 40px;
+    margin-top: -10px; /* Set desired height */
 }
-
 
 /* Main section */
 main {
@@ -63,13 +62,24 @@ main {
     gap: 40px;
 }
 
-.artist-profile {
+/* تعديل قائمة الأعمال لتبدو متماشية مع البروفايل */
+.artist-profile,
+.artist-works {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
     padding: 20px;
     background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+    .artist-profile h2,
+    .artist-works h3 {
+        color: #68b620; /* اللون المتماشي */
+    }
+
+.artist-profile {
+    gap: 20px;
 }
 
 .profile-img {
@@ -79,20 +89,20 @@ main {
     object-fit: cover;
 }
 
-.artist-details {
+.artist-info {
     flex-grow: 1;
 }
 
-.artist-details h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
+    .artist-info h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
 
-.artist-details p {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 8px;
-}
+    .artist-info p {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 8px;
+    }
 
 .follow-btn {
     padding: 10px 20px;
@@ -105,22 +115,19 @@ main {
     margin-top: 20px;
 }
 
-.follow-btn:hover {
-    background-color: #5b9a1b;
-}
+    .follow-btn:hover {
+        background-color: #5b9a1b;
+    }
 
 /* Recent Works Section */
 .artist-works {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* تباعد بين القسمين */
 }
 
-.artist-works h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
+    .artist-works h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
 
 .works-container {
     display: flex;
@@ -131,24 +138,28 @@ main {
 .work-item {
     width: calc(33.333% - 20px);
     text-align: center;
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
-.work-item img {
-    width: 65%;
-    height: 170px;
-    object-fit:fill;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
+    .work-item:hover {
+        transform: translateY(-5px); /* تأثير التحويم */
+    }
 
-.work-item p {
-    font-size: 16px;
-    color: #333;
-}
+    .work-item img {
+        width: 80%; /* زيادة العرض */
+        height: 170px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    .work-item p {
+        font-size: 16px;
+        color: #333;
+    }
 
 /* Footer */
 footer {
@@ -161,25 +172,16 @@ footer {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .artist-profile {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .artist-details {
-        text-align: center;
-    }
-
-    .works-container {
-        flex-direction: column;
-        gap: 20px;
+    .artist-profile,
+    .artist-works {
+        padding: 15px; /* تقليل التباعد */
     }
 
     .work-item {
-        width: 100%;
+        width: 100%; /* يجعل كل عنصر يأخذ العرض الكامل */
     }
 }
+
 /* Profile link styling */
 .profile-link {
     color: #68b620;
@@ -189,6 +191,6 @@ footer {
     transition: color 0.3s ease;
 }
 
-.profile-link:hover {
-    color: #ffdd57;
-}
+    .profile-link:hover {
+        color: #ffdd57;
+    }

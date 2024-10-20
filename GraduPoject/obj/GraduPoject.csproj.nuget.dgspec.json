@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\المنحة\\projects\\GraduPoject\\GraduPoject.csproj": {}
+    "F:\\menha\\projects\\GraduPoject\\GraduPoject.csproj": {}
   },
   "projects": {
-    "F:\\المنحة\\projects\\GraduPoject\\GraduPoject.csproj": {
+    "F:\\menha\\projects\\GraduPoject\\GraduPoject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\المنحة\\projects\\GraduPoject\\GraduPoject.csproj",
+        "projectUniqueName": "F:\\menha\\projects\\GraduPoject\\GraduPoject.csproj",
         "projectName": "GraduPoject",
-        "projectPath": "F:\\المنحة\\projects\\GraduPoject\\GraduPoject.csproj",
+        "projectPath": "F:\\menha\\projects\\GraduPoject\\GraduPoject.csproj",
         "packagesPath": "C:\\Users\\ENG\\.nuget\\packages\\",
-        "outputPath": "F:\\المنحة\\projects\\GraduPoject\\obj\\",
+        "outputPath": "F:\\menha\\projects\\GraduPoject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ENG\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -46,6 +46,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.10, )"

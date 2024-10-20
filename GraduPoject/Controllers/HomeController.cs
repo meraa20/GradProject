@@ -17,6 +17,10 @@ namespace GraduPoject.Controllers
         {
             return View("Index");
         }
+        public IActionResult Index2()
+        {
+            return View("Index2");
+        }
 
         public IActionResult Privacy()
         {

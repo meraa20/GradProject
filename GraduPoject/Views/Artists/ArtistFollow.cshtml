@@ -1,9 +1,55 @@
-﻿@{
+﻿@model List<BusinessOwner>
+@using System.Linq;
+
+@{
     ViewData["Title"] = "Follow Artist";
     Layout = "_many";
 }
 <link rel="stylesheet" href="~/css/Artist.css">
 <section class="artist-section">
+    @foreach (var artist in Model)
+    {
+        <div class="artist-profile">
+            <a asp-controller="Artists" asp-action="Artist" asp-route-id="@artist.ID">
+                <img src="~/images/438240362_453793743988413_2561990229713755555_n.jpg" alt="Artist Profile" class="profile-img">
+            </a>
+            <div class="artist-details">
+                <h2>
+                    @artist.Name
+                    <a asp-controller="Artists" asp-action="Artist" asp-route-id="@artist.ID" class="profile-link" title="Visit Profile"><i class="fas fa-user"></i></a>
+                </h2>
+                <p>Genre: @artist.NationalID</p>
+                <p>Followers:1234</p>
+                <p>Description: @artist.Bio</p>
+                <button class="follow-btn">Follow</button>
+            </div>
+        </div>
+
+        <section class="artist-works">
+            <h3>Recent Works</h3>
+            <div class="works-container">
+                @foreach (var product in artist.Products.Take(3))
+                {
+                    <div class="work-item">
+                        <img src="~/images/@product.Image" alt="@product.NameAntiqae">
+                        <p>@product.NameAntiqae</p>
+                    </div>
+                }
+            </div>
+        </section>
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="artist-profile">
         <a asp-controller="Artists" asp-action="Artist"><img src="~/images/438240362_453793743988413_2561990229713755555_n.jpg" alt="Artist Profile" class="profile-img"></a>
         <div class="artist-details">

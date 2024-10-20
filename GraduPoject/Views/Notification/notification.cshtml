@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<GraduPoject.Models.Notifications>
+
+@{
     ViewData["Title"] = "Notifications";
     Layout = "_many";
 }
@@ -7,26 +9,23 @@
 <section class="notifications-section">
     <h1>Notifications</h1>
     <div class="notifications-container">
-        <!-- Notification Item -->
-        <div class="notification-item">
-            <div class="notification-header">
-                <h2>New Product Alert</h2>
-                <span class="notification-date">August 25, 2024</span>
-            </div>
-            <p class="notification-content">We have added new products to our shop! Check out the latest additions to find your next favorite piece of art.</p>
-            <button class="delete-btn">Delete</button>
-        </div>
+        @foreach (var notification in Model)
+        {
+            <div class="notification-item">
+                <div class="notification-header">
+                    <h2>@notification.Notification</h2>
+                    <span class="notification-date">@notification.DateTime.ToString("MMMM dd, yyyy")</span>
+                </div>
+                <p class="notification-content">@notification.Notification</p>
 
-        <!-- Another Notification Item -->
-        <div class="notification-item">
-            <div class="notification-header">
-                <h2>Exclusive Offer</h2>
-                <span class="notification-date">August 20, 2024</span>
+                <!-- Delete Button with Form -->
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" name="id" value="@notification.ID" />
+                    <button class="delete-btn" type="submit">Delete</button>
+                </form>
             </div>
-            <p class="notification-content">Enjoy a special discount on selected items. Don’t miss out on this limited-time offer!</p>
-            <button class="delete-btn">Delete</button>
-        </div>
-
+        }
+       
         <!-- More Notification Items as needed -->
     </div>
 </section>

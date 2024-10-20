@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GraduPoject.Models
 {
@@ -13,10 +14,9 @@ namespace GraduPoject.Models
         public string Email { get; set; }
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
-        [DataType(DataType.Password)]
-        public string password { get; set; }
-        [Compare("Password")]
-        public string Confirmpassword { get; set; }
+        [ForeignKey("UserId")]
+        public string useid { get; set; }
+        public virtual IdUser IdUser { get; set; }
 
         public virtual ICollection<Payment>? Payments { get; set; }
         public virtual ICollection<Notifications>? Notifications { get; set; }

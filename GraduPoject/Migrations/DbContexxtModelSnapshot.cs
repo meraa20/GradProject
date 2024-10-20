@@ -46,9 +46,16 @@ namespace GraduPoject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("useid")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("ID");
 
-                    b.ToTable("Admins");
+                    b.HasIndex("useid")
+                        .IsUnique();
+
+                    b.ToTable("Admin");
                 });
 
             modelBuilder.Entity("GraduPoject.Models.BusinessOwner", b =>
@@ -87,9 +94,16 @@ namespace GraduPoject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("useid")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("ID");
 
-                    b.ToTable("BusinessOwners");
+                    b.HasIndex("useid")
+                        .IsUnique();
+
+                    b.ToTable("BusinessOwner");
                 });
 
             modelBuilder.Entity("GraduPoject.Models.Cart", b =>
@@ -118,7 +132,7 @@ namespace GraduPoject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int?>("CartID")
+                    b.Property<int>("CartID")
                         .HasColumnType("int");
 
                     b.Property<int>("ProductID")
@@ -182,6 +196,75 @@ namespace GraduPoject.Migrations
                     b.ToTable("Deliveries");
                 });
 
+            modelBuilder.Entity("GraduPoject.Models.IdUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Email")
+                        .IsUnique()
+                        .HasFilter("[Email] IS NOT NULL");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
             modelBuilder.Entity("GraduPoject.Models.Notifications", b =>
                 {
                     b.Property<int>("ID")
@@ -227,14 +310,11 @@ namespace GraduPoject.Migrations
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("OrderDetailsID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Phone")
+                    b.Property<string>("PaymentMethod")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Status")
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -246,11 +326,9 @@ namespace GraduPoject.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("OrderDetailsID");
-
                     b.HasIndex("UserID");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("GraduPoject.Models.OrderDetails", b =>
@@ -261,13 +339,13 @@ namespace GraduPoject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("DeliveryID")
+                    b.Property<int?>("DeliveryID")
                         .HasColumnType("int");
 
                     b.Property<int>("OrderID")
                         .HasColumnType("int");
 
-                    b.Property<int>("PaymentID")
+                    b.Property<int?>("PaymentID")
                         .HasColumnType("int");
 
                     b.Property<int>("Price")
@@ -336,7 +414,7 @@ namespace GraduPoject.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Payments");
+                    b.ToTable("Payment");
                 });
 
             modelBuilder.Entity("GraduPoject.Models.Product", b =>
@@ -361,7 +439,11 @@ namespace GraduPoject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("NameAntiqae")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NameArtist")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -377,7 +459,8 @@ namespace GraduPoject.Migrations
 
                     b.HasIndex("CategoryID");
 
-                    b.HasIndex("RateID");
+                    b.HasIndex("RateID")
+                        .IsUnique();
 
                     b.ToTable("Products");
                 });
@@ -390,17 +473,12 @@ namespace GraduPoject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<int>("ProductID")
-                        .HasColumnType("int");
-
                     b.Property<int>("RateNumber")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("ProductID");
-
-                    b.ToTable("Rates");
+                    b.ToTable("Rate");
                 });
 
             modelBuilder.Entity("GraduPoject.Models.Report", b =>
@@ -428,7 +506,7 @@ namespace GraduPoject.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Reports");
+                    b.ToTable("Report");
                 });
 
             modelBuilder.Entity("GraduPoject.Models.Review", b =>
@@ -466,7 +544,7 @@ namespace GraduPoject.Migrations
 
                     b.HasIndex("UserID");
 
-                    b.ToTable("Reviews");
+                    b.ToTable("Review");
                 });
 
             modelBuilder.Entity("GraduPoject.Models.User", b =>
@@ -476,10 +554,6 @@ namespace GraduPoject.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<string>("Confirmpassword")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -494,13 +568,171 @@ namespace GraduPoject.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("password")
+                    b.Property<string>("useid")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Users");
+                    b.HasIndex("useid")
+                        .IsUnique();
+
+                    b.ToTable("User");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
+                });
+
+            modelBuilder.Entity("GraduPoject.Models.Admin", b =>
+                {
+                    b.HasOne("GraduPoject.Models.IdUser", "IdUser")
+                        .WithOne("Admin")
+                        .HasForeignKey("GraduPoject.Models.Admin", "useid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("IdUser");
+                });
+
+            modelBuilder.Entity("GraduPoject.Models.BusinessOwner", b =>
+                {
+                    b.HasOne("GraduPoject.Models.IdUser", "IdUser")
+                        .WithOne("BusinessOwner")
+                        .HasForeignKey("GraduPoject.Models.BusinessOwner", "useid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("IdUser");
                 });
 
             modelBuilder.Entity("GraduPoject.Models.Cart", b =>
@@ -516,9 +748,11 @@ namespace GraduPoject.Migrations
 
             modelBuilder.Entity("GraduPoject.Models.CartItem", b =>
                 {
-                    b.HasOne("GraduPoject.Models.Cart", null)
+                    b.HasOne("GraduPoject.Models.Cart", "cart")
                         .WithMany("Items")
-                        .HasForeignKey("CartID");
+                        .HasForeignKey("CartID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("GraduPoject.Models.Product", "Product")
                         .WithMany()
@@ -527,6 +761,8 @@ namespace GraduPoject.Migrations
                         .IsRequired();
 
                     b.Navigation("Product");
+
+                    b.Navigation("cart");
                 });
 
             modelBuilder.Entity("GraduPoject.Models.Delivery", b =>
@@ -557,19 +793,11 @@ namespace GraduPoject.Migrations
 
             modelBuilder.Entity("GraduPoject.Models.Order", b =>
                 {
-                    b.HasOne("GraduPoject.Models.OrderDetails", "Details")
-                        .WithMany()
-                        .HasForeignKey("OrderDetailsID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("GraduPoject.Models.User", "User")
                         .WithMany()
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Details");
 
                     b.Navigation("User");
                 });
@@ -578,9 +806,7 @@ namespace GraduPoject.Migrations
                 {
                     b.HasOne("GraduPoject.Models.Delivery", "Delivery")
                         .WithMany()
-                        .HasForeignKey("DeliveryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DeliveryID");
 
                     b.HasOne("GraduPoject.Models.Order", "Order")
                         .WithMany()
@@ -590,9 +816,7 @@ namespace GraduPoject.Migrations
 
                     b.HasOne("GraduPoject.Models.Payment", "Payment")
                         .WithMany()
-                        .HasForeignKey("PaymentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PaymentID");
 
                     b.Navigation("Delivery");
 
@@ -654,8 +878,8 @@ namespace GraduPoject.Migrations
                         .IsRequired();
 
                     b.HasOne("GraduPoject.Models.Rate", "Rate")
-                        .WithMany()
-                        .HasForeignKey("RateID")
+                        .WithOne("Product")
+                        .HasForeignKey("GraduPoject.Models.Product", "RateID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -664,17 +888,6 @@ namespace GraduPoject.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("Rate");
-                });
-
-            modelBuilder.Entity("GraduPoject.Models.Rate", b =>
-                {
-                    b.HasOne("GraduPoject.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("GraduPoject.Models.Report", b =>
@@ -723,6 +936,68 @@ namespace GraduPoject.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("GraduPoject.Models.User", b =>
+                {
+                    b.HasOne("GraduPoject.Models.IdUser", "IdUser")
+                        .WithOne("User")
+                        .HasForeignKey("GraduPoject.Models.User", "useid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("IdUser");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("GraduPoject.Models.IdUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("GraduPoject.Models.IdUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("GraduPoject.Models.IdUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("GraduPoject.Models.IdUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("GraduPoject.Models.BusinessOwner", b =>
                 {
                     b.Navigation("Notifications");
@@ -742,6 +1017,15 @@ namespace GraduPoject.Migrations
                     b.Navigation("Products");
                 });
 
+            modelBuilder.Entity("GraduPoject.Models.IdUser", b =>
+                {
+                    b.Navigation("Admin");
+
+                    b.Navigation("BusinessOwner");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("GraduPoject.Models.OrderDetails", b =>
                 {
                     b.Navigation("OrderProducts");
@@ -752,6 +1036,12 @@ namespace GraduPoject.Migrations
                     b.Navigation("OrderProducts");
 
                     b.Navigation("Reviews");
+                });
+
+            modelBuilder.Entity("GraduPoject.Models.Rate", b =>
+                {
+                    b.Navigation("Product")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("GraduPoject.Models.User", b =>
